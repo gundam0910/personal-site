@@ -201,3 +201,10 @@ dist
 ### React Router ###
 .react-router/
 /build/
+
+### Local sensitive & system files ###
+# Personal CV / Resume / TPF documents
+docs/*.docx
+
+# MSYS / Windows crash dumps
+*.stackdump

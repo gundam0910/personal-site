@@ -8,7 +8,14 @@
 		"enabled": true
 	},
 	"upload_source_maps": true,
-	"vars": {
-		"VALUE_FROM_CLOUDFLARE": "Hello from Cloudflare"
-	}
+	"routes": [
+		{
+			"pattern": "geoff-ayap.site",
+			"custom_domain": true
+		},
+		{
+			"pattern": "www.geoff-ayap.site",
+			"custom_domain": true
+		}
+	]
 }

@@ -19,18 +19,34 @@ export const links: Route.LinksFunction = () => [
 	},
 	{
 		rel: "stylesheet",
-		href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+		href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;600;700&display=swap",
 	},
 ];
 
+// Runs before hydration so the correct theme is set on first paint (no flash).
+const noFlashThemeScript = `
+(function () {
+	try {
+		var stored = window.localStorage.getItem("ledger-theme");
+		var theme = stored === "ledger-light" || stored === "ledger-dark"
+			? stored
+			: window.matchMedia("(prefers-color-scheme: light)").matches
+				? "ledger-light"
+				: "ledger-dark";
+		document.documentElement.setAttribute("data-theme", theme);
+	} catch (e) {}
+})();
+`;
+
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en">
+		<html lang="en" data-theme="ledger-dark">
 			<head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<Meta />
 				<Links />
+				<script dangerouslySetInnerHTML={{ __html: noFlashThemeScript }} />
 			</head>
 			<body>
 				{children}

@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 import type { Route } from "./+types/home";
 import { PageLayout } from "../components/PageLayout";
 import { SystemLedger } from "../components/SystemLedger";
-import { profile, stats, projects } from "../lib/data";
+import { profile, stats, projects, trainings } from "../lib/data";
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -110,6 +110,39 @@ export default function Home() {
 							See all projects
 						</NavLink>
 					</div>
+				</div>
+			</section>
+
+			{/* trainings & awards */}
+			<section className="border-t border-base-300">
+				<div className="mx-auto max-w-5xl px-6 py-16">
+					<div className="mb-6">
+						<p className="eyebrow text-[11px] uppercase tracking-widest text-primary">
+							Trainings &amp; Awards
+						</p>
+						<h2 className="font-display text-2xl font-semibold sm:text-3xl">
+							Recognitions &amp; conferences
+						</h2>
+					</div>
+					<ul className="grid gap-3 sm:grid-cols-3">
+						{trainings.map((t) => (
+							<li
+								key={t.name}
+								className="rounded-box border border-base-300 bg-base-100 p-4"
+							>
+								<p className="font-display text-sm font-medium">{t.name}</p>
+								<p className="mt-1 eyebrow text-[10px] uppercase tracking-widest text-base-content/50">
+									{t.year} · {t.location}
+								</p>
+								{t.achievement && (
+									<p className="mt-2 inline-flex items-center gap-1 text-xs text-secondary">
+										<span className="status-dot inline-block h-1.5 w-1.5 rounded-full bg-secondary" />
+										{t.achievement}
+									</p>
+								)}
+							</li>
+						))}
+					</ul>
 				</div>
 			</section>
 		</PageLayout>

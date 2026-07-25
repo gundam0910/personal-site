@@ -1,6 +1,6 @@
 import type { Route } from "./+types/about";
 import { PageLayout } from "../components/PageLayout";
-import { profile, skills } from "../lib/data";
+import { profile, skills, trainings } from "../lib/data";
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -66,6 +66,31 @@ export default function About() {
 							</div>
 						))}
 					</div>
+				</div>
+				{/* trainings & awards */}
+				<div className="mt-14">
+					<p className="eyebrow text-[11px] uppercase tracking-widest text-primary">
+						Trainings &amp; Awards
+					</p>
+					<ul className="mt-4 divide-y divide-base-300 rounded-box border border-base-300 bg-base-100">
+						{trainings.map((t) => (
+							<li
+								key={t.name}
+								className="flex items-baseline gap-4 px-5 py-3"
+							>
+								<span className="status-dot mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+								<div className="flex-1">
+									<p className="font-display text-sm font-medium">{t.name}</p>
+									{t.achievement && (
+										<p className="text-xs text-secondary">{t.achievement}</p>
+									)}
+								</div>
+								<span className="eyebrow text-[10px] uppercase tracking-widest text-base-content/50">
+									{t.year} · {t.location}
+								</span>
+							</li>
+						))}
+					</ul>
 				</div>
 			</section>
 		</PageLayout>

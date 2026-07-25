@@ -5,9 +5,9 @@ export const profile = {
 	location: "Philippines · open to remote / international / freelance",
 	summary:
 		"Full-stack engineer specializing in JavaScript/TypeScript (React, Next.js, Angular, Node.js) and PHP (Laravel, Lumen). Background spans core banking, government digitalization, and consumer super-apps — systems where correctness and uptime aren't negotiable.",
-	email: "you@geoff-ayap.site",
+	email: "geoffrey.ayap@gmail.com",
 	github: "https://github.com/gundam0910",
-	linkedin: "https://linkedin.com/in/your-linkedin-handle",
+	linkedin: "https://www.linkedin.com/in/geoff101",
 };
 
 export const stats = [
@@ -31,7 +31,7 @@ export const systems: SystemEntry[] = [
 		id: "metrobank-core-banking",
 		org: "Metrobank",
 		title: "Core Banking & Tellering System",
-		period: "—",
+		period: "2021–2024",
 		status: "ONLINE",
 		summary:
 			"Engineering work on core banking and teller-facing systems for one of the Philippines' largest banks — high-stakes, transaction-critical software with strict accuracy and compliance requirements.",
@@ -51,7 +51,7 @@ export const systems: SystemEntry[] = [
 		id: "pickaroo-merchant-portal",
 		org: "98Labs Inc.",
 		title: "PICK.A.ROO Merchant Portal",
-		period: "Recent",
+		period: "2025–Present",
 		status: "IN PROGRESS",
 		summary:
 			"Frontend engineering and technical documentation (architecture docs, knowledge transfer, technical handover) for the merchant-facing portal of PICK.A.ROO, a Filipino-owned lifestyle super-app.",
@@ -70,11 +70,51 @@ export type Project = {
 
 export const projects: Project[] = [
 	{
+		slug: "pickaroo-merchant-portal",
+		name: "PICK.A.ROO Merchant Portal",
+		description:
+			"Merchant-facing portal for a Filipino-owned lifestyle super-app, plus the architecture and handover documentation that let the next team run with it.",
+		tags: ["React", "Next.js", "Documentation"],
+		role: "Frontend Engineer",
+	},
+	{
+		slug: "timekeepers-payroll",
+		name: "Timekeepers Payroll System",
+		description:
+			"Full-stack payroll platform proof-of-concept built on Remix — owned frontend, backend API, and production maintenance end-to-end.",
+		tags: ["Remix", "TypeScript", "Node.js", "Supabase", "Fintech"],
+		role: "Senior Software Engineer",
+	},
+	{
 		slug: "core-banking-tellering",
 		name: "Core Banking & Tellering System",
 		description:
 			"Transaction-critical teller and back-office tooling for enterprise banking operations, built for accuracy, auditability, and uptime.",
 		tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "Fintech"],
+		role: "Senior Software Engineer",
+	},
+	{
+		slug: "pasig-hudson-gtm",
+		name: "Pasig & Hudson GTM Platform",
+		description:
+			"Go-to-market platform with full-stack ownership: Node.js and Laravel Lumen APIs, TypeScript + React frontend, deployed via Docker on AWS.",
+		tags: ["TypeScript", "React", "Node.js", "Laravel", "AWS", "Docker"],
+		role: "Senior Software Engineer",
+	},
+	{
+		slug: "quadx-kaberx",
+		name: "Quad X — KaberX App",
+		description:
+			"Cross-platform consumer app shipped as a 3-week MVP, then iterated. Mobile (Ionic/Angular) + backend (Laravel Lumen, Redis) for a Filipino lifestyle platform.",
+		tags: ["Angular", "Ionic", "Laravel", "Redis", "Mobile"],
+		role: "Senior Software Engineer · On-site Consultant",
+	},
+	{
+		slug: "quadx-checkmeout",
+		name: "Quad X — CheckMeOut",
+		description:
+			"Four-year engagement building and maintaining a retail platform — REST API on Laravel Lumen, React + Redux frontend, direct client coordination.",
+		tags: ["React", "Redux", "Laravel", "REST API"],
 		role: "Senior Software Engineer",
 	},
 	{
@@ -85,31 +125,16 @@ export const projects: Project[] = [
 		tags: ["PHP", "Laravel", "TypeScript", "PostgreSQL", "GovTech"],
 		role: "Software Engineer",
 	},
-	{
-		slug: "pickaroo-merchant-portal",
-		name: "PICK.A.ROO Merchant Portal",
-		description:
-			"Merchant-facing portal for a Filipino-owned lifestyle super-app, plus the architecture and handover documentation that let the next team run with it.",
-		tags: ["React", "Next.js", "Documentation"],
-		role: "Frontend Engineer",
-	},
-	{
-		slug: "superapp-poc",
-		name: "Flutter Super-App POC",
-		description:
-			"A from-scratch proof of concept for a lifestyle super-app: Flutter client, Riverpod state management, NestJS + PostgreSQL backend, phased 14-week delivery plan.",
-		tags: ["Flutter", "Riverpod", "NestJS", "Supabase", "PostgreSQL"],
-		role: "Solo build",
-	},
 ];
 
 export const skills = {
-	Languages: ["TypeScript", "JavaScript (ES6+)", "PHP"],
-	Frontend: ["React", "Next.js", "Angular", "Tailwind CSS", "DaisyUI", "Redux Toolkit"],
-	Backend: ["Node.js", "NestJS", "Laravel", "Lumen", "FastAPI"],
-	Data: ["PostgreSQL", "MongoDB"],
-	Cloud: ["GCP", "AWS", "Azure", "Docker", "Kubernetes", "Terraform"],
-	Practice: ["REST APIs", "GraphQL", "CI/CD", "Testing (Jest/RTL)", "System Design"],
+	Languages: ["JavaScript", "TypeScript", "PHP"],
+	Frontend: ["React", "Next.js", "Angular", "Ionic", "Redux/Redux-Saga", "HTML5", "CSS3", "Tailwind CSS", "DaisyUI"],
+	Backend: ["Node.js", "Laravel", "Lumen", "REST APIs", "Swagger/OpenAPI"],
+	Data: ["PostgreSQL", "MySQL", "Supabase", "Redis"],
+	Cloud: ["AWS", "Docker", "Jenkins", "GitHub Actions"],
+	Legacy: ["Zend Framework", "CodeIgniter", "PyroCMS", "Grails", "Joomla", "Magento", "WordPress", "Godot"],
+	Practice: ["Unit testing", "Integration testing", "QA testing", "Code repository management", "DevOps workflows", "Software design", "Debugging & deployment"],
 };
 
 export const nav = [
@@ -118,4 +143,30 @@ export const nav = [
 	{ to: "/experience", label: "Experience" },
 	{ to: "/projects", label: "Projects" },
 	{ to: "/contact", label: "Contact" },
+];
+
+export type Training = {
+	name: string;
+	year: number;
+	location: string;
+	achievement?: string;
+};
+
+export const trainings: Training[] = [
+	{
+		name: "Angular Malaysia (NgMy)",
+		year: 2019,
+		location: "Malaysia",
+	},
+	{
+		name: "JSConf & CSSConf",
+		year: 2015,
+		location: "Singapore",
+	},
+	{
+		name: "TADHack Philippines",
+		year: 2014,
+		location: "Philippines",
+		achievement: "1st Runner-up",
+	},
 ];
